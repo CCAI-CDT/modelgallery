@@ -1,0 +1,398 @@
+// Variables
+// Padding and margin
+$padding-x: 2rem;
+$padding-y: 0.5rem;
+$card-width: 300px;
+$background-color: #eceff1;
+$primary-color-light: #42a5f5;
+$primary-color: #2196f3;
+
+// Page essentials
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+}
+
+body {
+  font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #1565c0;
+  transition: all 0.2s ease;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Page layout
+
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: $padding-y $padding-x;
+  // border-bottom: 1px solid rgba(0,0,0,0.14);
+
+  h1 {
+    font-weight: 500;
+    margin: 0;
+    margin-top: 0.5rem;
+    font-size: 2.2rem;
+    font-family: Outfit, "Helvetica Neue", Arial, sans-serif;
+    color: #1976d2;
+
+    a:hover {
+      text-decoration: none;
+      color: #2196f3;
+    }
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  nav {
+    ul {
+      display: flex;
+      list-style: none;
+
+      li a {
+        margin-right: 1.5rem;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+
+        span {
+          text-decoration: none;
+          font-family: Outfit, "Helvetica Neue", Arial, sans-serif;
+          font-size: 1rem;
+        }
+
+        i {
+          font-size: 18px !important;
+          margin-left: 0.2rem;
+          text-decoration: none !important;
+          color: #999;
+        }
+      }
+
+
+    }
+  }
+}
+
+main {
+  padding: $padding-y $padding-x;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#gallery {
+  padding: 5rem 1rem;
+  display: grid;
+  // grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, $card-width);
+  grid-gap: 1rem;
+  justify-content: center;
+  // display: flex;
+  // flex-wrap: wrap;
+  // gap: 1.5rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: all 0.2s ease;
+  max-width: $card-width;
+  margin-bottom: 1rem;
+
+  img {
+    // border-radius: 10px;
+    height: calc($card-width * 0.75);
+    width: $card-width;
+    object-fit: cover;
+  }
+
+  .card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    font-family: Outfit, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .card-author {
+    font-size: 0.9rem;
+    font-family: Outfit, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 500;
+    margin: 0;
+    color: #444;
+    margin: 0.2rem 0 0.5rem 0;
+  }
+
+  .card-content {
+    padding: 1rem 1rem 0.5rem 1rem;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &.no-hover {
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+.model-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 5rem 1rem;
+
+  .model-container {
+    max-width: calc($card-width + 2rem);
+    flex: 1;
+    min-width: $card-width;
+  }
+
+  .data-container {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    font-family: Outfit, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .authors {
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: Outfit, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    color: #444;
+    margin: 0.2rem 0 0.5rem 0;
+  }
+
+  .model-description {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  #toggle-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+
+    button {
+      padding: 0.8rem 1rem;
+      border-radius: 0;
+      border: none;
+      background: #ccc;
+      // border-bottom: 2px dashed #ccc;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      flex: 1;
+      font-family: Outfit, "Helvetica Neue", Arial, sans-serif;
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.2rem;
+
+      &.selected {
+        background: #fff;
+        color: #1e88e5;
+      }
+
+      i {
+        font-size: 24px !important;
+        margin-left: 0.2rem;
+        text-decoration: none !important;
+      }
+
+      &:hover {
+        background: #e0e0e0;
+      }
+    }
+  }
+
+  #file-canvas-container, #webcam-container {
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+    max-width: 100%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin: 1rem auto;
+    margin-top: 0;
+    overflow: hidden;
+    background: #ccc;
+  }
+
+  #webcam-wrapper {
+    padding: 1rem;
+
+    #webcam-select {
+      padding: 0.4rem;
+      border-radius: 5px;
+      border: 2px dashed #ccc;
+      width: 100%;
+    }
+  }
+
+  #upload-wrapper-drag-drop {
+    padding: 1rem;
+    #drop-area {
+      width: 100%;
+      // height: 150px;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+      gap: 1rem;
+      // cursor: pointer;
+
+      .my-form {
+        border: 2px dashed #ccc;
+        border-radius: 10px;
+        padding: 1rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: Outfit, "Helvetica Neue", Arial, sans-serif;
+        transition: all 0.2s ease;
+
+        &:hover {
+          border-color: $primary-color-light;
+        }
+      }
+
+      input[type="file"] {
+        // make accessibly hidden
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+      }
+
+      label {
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        background: #1e88e5;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: $primary-color;
+        }
+      }
+
+      img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      .drop-message {
+        font-size: 1.2rem;
+        margin: 0;
+        text-align: center;
+      }
+    }
+  }
+
+  #output-wrapper {
+    border-top: 2px solid #eceff1;
+    padding: 1rem;
+    font-family: Outfit, "Helvetica Neue", Arial, sans-serif;
+
+    .label-title {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin: 0;
+      color: #1e88e5;
+      margin: 0.2rem 0 0.5rem 0;
+    }
+
+    #label-container {
+      padding: 0.5rem 0;
+
+      .label-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 0;
+
+        .label-name {
+          font-size: 1rem;
+          font-weight: 500;
+          margin: 0;
+          width: 25%;
+        }
+
+        .confidence-wrapper {
+          width: 75%;
+          position: relative;
+          // padding: 0.2rem 0rem;
+          border-radius: 5px;
+          background: #f5f5f5;
+          height: 1.5rem;
+        }
+
+        .label-confidence {
+          font-size: 0.9rem;
+          margin: 0;
+          color: #fff;
+          border-radius: 5px;
+          text-align: right;
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+          position: relative;
+          transition: all 0.2s ease;
+          padding: 0 0.5rem;
+          line-height: 1.5rem;
+        }
+
+        .confidence-bar {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 0;
+          background: $primary-color;
+          border-radius: 5px;
+          transition: all 0.2s ease;
+          z-index: 0;
+        }
+      }
+    }
+  }
+}

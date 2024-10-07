@@ -1,0 +1,17 @@
+
+<div class="card">
+
+  <div class="card-content" onclick="window.location.href='/modelgallery{{ include.url }}'" style="cursor: pointer;">
+    <div class="card-title">
+      <a href="/modelgallery{{ include.url }}">{{ include.label }}</a>
+    </div>
+    {% if include.authors %}
+    <div class="card-author">
+        {% for author in include.authors %}
+        <span>{{ author }}</span>{% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+    </div>
+    {% endif %}
+    <p>{{ include.description }}</p>
+  </div>
+</div>

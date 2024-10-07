@@ -1,0 +1,10 @@
+---
+layout: default
+---
+<div id="gallery">
+
+
+  {% for model in site.models %}
+    {% include display_card.html label=model.title url=model.url authors=model.authors description=model.description %}
+  {% endfor %}
+</div>
