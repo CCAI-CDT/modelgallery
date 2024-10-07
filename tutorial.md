@@ -78,7 +78,18 @@ When using datasets from external sources, consider the following:
 ## Your Turn
 Now it's your turn to create your own Teachable Machine model. In groups or however you prefer, pick a project idea, gather data, and start training your model. You could use the objects around you, create models based on poses or hand gestures, or find a dataset online to experiment with.
 
-If you're happy to list your project here, please export your model and/or download your dataset and share it with me.
+If you're happy to list your project here, please export your model and share the details with me on teams or email. 
+
+### Exporting your model 
+To showcase your model on the Model Gallery, export it as a tensorflow.js model. You can choose to download and share the downloaded files, or upload it to Google servers and share the URL. 
+
+![Exporting your model](../modelgallery/assets/imgs/export_model.png)
+
+### Submitting your model to the gallery
+- Pick a **name** for your model
+- Provide a short (or long) **description** and any **instructions or images (optional)**
+- Make sure to include **links to any external datasets** that you used (e.g., Kaggle), especially if they have a license that requires attribution. 
+- Include your preferred display names as **model authors** 
 
 ## Resources
 ### General
