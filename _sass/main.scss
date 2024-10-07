@@ -122,7 +122,7 @@ main {
 
   img {
     // border-radius: 10px;
-    height: calc($card-width * 0.75);
+    height: calc(300px * 0.75);
     width: $card-width;
     object-fit: cover;
   }
@@ -168,7 +168,7 @@ main {
   padding: 5rem 1rem;
 
   .model-container {
-    max-width: calc($card-width + 2rem);
+    max-width: calc(300px + 2rem);
     flex: 1;
     min-width: $card-width;
   }
