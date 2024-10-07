@@ -83,7 +83,7 @@ If you're happy to list your project here, please export your model and share th
 ### Exporting your model 
 To showcase your model on the Model Gallery, export it as a tensorflow.js model. You can choose to download and share the downloaded files, or upload it to Google servers and share the URL. 
 
-<img src="../modelgallery/assets/imgs/export_model.png" alt="Exporting your model" width="800">
+<img src="https://ccai-cdt.github.io/modelgallery/assets/imgs/export_model.png" alt="Exporting your model" width="800">
 
 ### Submitting your model to the gallery
 - Pick a **name** for your model
