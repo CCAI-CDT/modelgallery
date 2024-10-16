@@ -6,7 +6,7 @@ authors:
 model_path: https://teachablemachine.withgoogle.com/models/5X52JDaa5/
 ---
 <figure>
-  <img src="/modelgallery/assets/imgs/dalle-pie.png" alt="DALL-E generated pie">
+  <img src="/modelgallery/assets/imgs/dalle-pie.jpeg" alt="DALL-E generated pie">
   <figcaption><a href="" target="_blank">DALL-E</a> generated pie</figcaption>
 </figure>
 
