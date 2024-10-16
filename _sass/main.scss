@@ -199,6 +199,10 @@ main {
     margin: 0.5rem 0;
   }
 
+  img {
+    max-width: 100%;
+  }
+
   #toggle-wrapper {
     display: flex;
     justify-content: center;
